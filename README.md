@@ -13,7 +13,7 @@ Tasks to do:
 
 ## Live demo
 
-You can visit live version via [link](https://elmar8287.github.io/todo_modeule2/)
+You can visit live version via [link](https://elmar8287.github.io/todo_module2/)
 
 ![Screen Shot](./src/scrn-sht.PNG)
 
