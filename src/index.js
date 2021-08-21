@@ -1,6 +1,7 @@
 const addTasksBtn = document.getElementById('add-task-btn');
 const deskTaskInput = document.getElementById('description-task');
 const todoWrapper = document.querySelector('.todos-wrapper');
+const clearAll = document.getElementById('clear');
 
 let tasks;
 /* eslint-disable */
@@ -154,3 +155,13 @@ checkboxes.forEach((chbox) => {
 const editTask = index => {
   todoItemElems[index].contentEditable = true;
 };
+
+const clearTasks = task => {
+  task = tasks.completed;
+};
+
+clearAll.addEventListener('click', () => { 
+  tasks.filter(clearTasks);
+  updateLocal(); 
+  addToHTML();
+});
