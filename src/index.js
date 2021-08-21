@@ -156,12 +156,32 @@ const editTask = index => {
   todoItemElems[index].contentEditable = true;
 };
 
-const clearTasks = task => {
-  task = tasks.completed;
+const cleanCompleted = () => {
+  const oldList = JSON.parse(localStorage.getItem('tasks'));
+  oldList.forEach((element) => {
+    if (element.completed) {
+      element.index = 0;
+    }
+  });
+  const newList = oldList.filter((ind) => ind.index !== 0);
+  if (newList.length > 0) {
+    let i = 1;
+    newList.forEach((element) => {
+      element.index = i;
+      i += 1;
+    });
+  }
+  localStorage.setItem('tasks', JSON.stringify(newList));
+  const allCheckboxes = Array.from(
+    document.querySelectorAll('input[type="checkbox"]'),
+  );
+  allCheckboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+      checkbox.parentNode.remove();
+    }
+  });
 };
 
-clearAll.addEventListener('click', () => { 
-  tasks.filter(clearTasks);
-  updateLocal(); 
-  addToHTML();
+document.querySelector('#clear').addEventListener('click', () => {
+  cleanCompleted();
 });
