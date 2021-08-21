@@ -1,7 +1,6 @@
 const addTasksBtn = document.getElementById('add-task-btn');
 const deskTaskInput = document.getElementById('description-task');
 const todoWrapper = document.querySelector('.todos-wrapper');
-const clearAll = document.getElementById('clear');
 
 let tasks;
 /* eslint-disable */
