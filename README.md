@@ -29,7 +29,7 @@ You can visit live version via [link](https://elmar8287.github.io/todo_module2/)
 To run code locally, open your terminal and follow these steps:
 
 - `git clone (https://github.com/elmar8287/todo_modeule2.git)`
-- `cd todo-list` 
+- `cd todo_modeule2` 
 - `npm install`
 - `npm start` 
   

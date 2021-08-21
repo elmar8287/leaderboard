@@ -79,12 +79,14 @@ h1 {
   justify-content: space-between;
 }
 
-.clear-all {
+#clear {
   padding: 10px;
   text-align: center;
   background-color: rgb(219, 219, 219);
   margin: 10px 0 0 0;
   border-radius: 5px;
+  width: 100%;
+  font-size: large;
   cursor: pointer;
 }
 

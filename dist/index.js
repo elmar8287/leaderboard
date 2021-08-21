@@ -1,21 +1,21 @@
-const addTasksBtn = document.getElementById('add-task-btn'); // call button for add tasks
-const deskTaskInput = document.getElementById('description-task'); // the tasks input
-const todoWrapper = document.querySelector('.todos-wrapper'); // the tasks section where they will be displayed
+const addTasksBtn = document.getElementById('add-task-btn');
+const deskTaskInput = document.getElementById('description-task');
+const todoWrapper = document.querySelector('.todos-wrapper');
 
-let tasks; // this is an empty array of our taks
+let tasks;
 /* eslint-disable */
-!localStorage.tasks ? tasks = [] : tasks = JSON.parse(localStorage.getItem('tasks')); // check the local storage of any tasks
+!localStorage.tasks ? tasks = [] : tasks = JSON.parse(localStorage.getItem('tasks')); 
 /* eslint-anable */
 
 let todoItemElems = [];
 
-function Task(description) { // this is a constructor for each task
-  this.description = description; // this comes from input
-  this.completed = false; // by default the task will be not completed
-  this.index = tasks.length + 1; // the index of inputed task
+function Task(description) {
+  this.description = description;
+  this.completed = false;
+  this.index = tasks.length + 1;
 }
 /* eslint-disable */
-const createTemplate = (task, index) => { // this is a template wich we will send to HTML
+const createTemplate = (task, index) => {
   return `
     <li class="todo-item ${task.completed ? 'checked' : ''} draggable" draggable='true'>
       
@@ -32,10 +32,10 @@ const createTemplate = (task, index) => { // this is a template wich we will sen
 
 };
 /* eslint-anable */
-const addToHTML = () => { // adding the list of tasks to HTML, to out DIV
-  todoWrapper.innerHTML = ''; // empty the lit of tasks in HTML
-  if (tasks.length > 0) { // if the array of taks is not empty
-    tasks.forEach((item, index) => { // iterate out array each task and send it to HTML
+const addToHTML = () => { 
+  todoWrapper.innerHTML = '';
+  if (tasks.length > 0) {
+    tasks.forEach((item, index) => {
       todoWrapper.innerHTML += createTemplate(item, index);
     });
     todoItemElems = document.querySelectorAll('.todo-item');
@@ -44,12 +44,12 @@ const addToHTML = () => { // adding the list of tasks to HTML, to out DIV
 
 addToHTML();
 
-const updateLocal = () => { // add to Local storage
-  localStorage.setItem('tasks', JSON.stringify(tasks)); // save as a string using JSON
+const updateLocal = () => {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 /* eslint-disable */
-const completeTask = (index) => { // function for change the comple status to complete
-  tasks[index].completed = !tasks[index].completed; //change the status
+const completeTask = (index) => {
+  tasks[index].completed = !tasks[index].completed;
   if (tasks[index].completed) {
     todoItemElems[index].classList.add('checked');
   } else {
@@ -59,18 +59,18 @@ const completeTask = (index) => { // function for change the comple status to co
   addToHTML();
 };
 /* eslint-anable */
-addTasksBtn.addEventListener('click', () => { // by clicking the button
-  tasks.push(new Task(deskTaskInput.value)); // add new task
-  updateLocal(); // save to Local Storage
-  addToHTML(); // call function wich add new task to HTML template
-  deskTaskInput.value = ''; // clear the input after clicking "Add" button
+addTasksBtn.addEventListener('click', () => { 
+  tasks.push(new Task(deskTaskInput.value));
+  updateLocal(); 
+  addToHTML(); 
+  deskTaskInput.value = ''; 
 
 });
 
-const deleteTask = index => { // function for delete button
+const deleteTask = index => {
   todoItemElems[index].classList.add('deletion');
-  setTimeout(() => { // create a pause for animation when delete
-    tasks.splice(index, 1); // splice delete the index
+  setTimeout(() => { 
+    tasks.splice(index, 1);
     updateLocal();
     addToHTML();
   }, 500);
@@ -128,7 +128,7 @@ class DND {
 
 }
 
-function init() {
+init = () => {
   let dnd = new DND(); 
   dnd.setEventListeners();  
 }
@@ -143,16 +143,6 @@ windowLoad.then(
   }
 );
 
-function updateStatus(event, status) {
-  event.target.nextElementSibling.classList.toggle('completed');
-  status[event.target.dataset.id].completed = event.target.checked;
-  return status;
-}
-function editTodo(event, editable) {
-  editable[event.target.dataset.index].description = event.target.value;
-  return editable;
-}
-
 const checkboxes = document.querySelectorAll('.checkbox');
 checkboxes.forEach((chbox) => {
   chbox.addEventListener('change', (event) => {
@@ -164,3 +154,33 @@ checkboxes.forEach((chbox) => {
 const editTask = index => {
   todoItemElems[index].contentEditable = true;
 };
+
+const cleanCompleted = () => {
+  const oldList = JSON.parse(localStorage.getItem('tasks'));
+  oldList.forEach((element) => {
+    if (element.completed) {
+      element.index = 0;
+    }
+  });
+  const newList = oldList.filter((ind) => ind.index !== 0);
+  if (newList.length > 0) {
+    let i = 1;
+    newList.forEach((element) => {
+      element.index = i;
+      i += 1;
+    });
+  }
+  localStorage.setItem('tasks', JSON.stringify(newList));
+  const allCheckboxes = Array.from(
+    document.querySelectorAll('input[type="checkbox"]'),
+  );
+  allCheckboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+      checkbox.parentNode.remove();
+    }
+  });
+};
+
+document.querySelector('#clear').addEventListener('click', () => {
+  cleanCompleted();
+});
