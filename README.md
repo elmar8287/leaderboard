@@ -1,19 +1,16 @@
-# Building a "To-do list" website
+# Building a "Leaderboard" web-application
 
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
 Tasks to do:
 
-- Project 1: List structure.
-- Project 2: Interactive list.
-- Project 3: Add and remove items.
-
-## View short video
-[link] (https://www.loom.com/share/dd6de76393ed48b5ac185550aa1c2fd6)
+Project 1: basic page structure.
+Project 2: send and receive data from API.
+Project 3: final touches.
 
 ## Live demo
 
-You can visit live version via [link](https://elmar8287.github.io/todo_module2/)
+You can visit live version via [link](https://elmar8287.github.io/leaderboard/)
 
 ![Screen Shot](./src/scrn-sht.PNG)
 
@@ -28,8 +25,8 @@ You can visit live version via [link](https://elmar8287.github.io/todo_module2/)
 ### Setup
 To run code locally, open your terminal and follow these steps:
 
-- `git clone (https://github.com/elmar8287/todo_modeule2.git)`
-- `cd todo_modeule2` 
+- `git clone (https://github.com/elmar8287/leaderboard.git)`
+- `cd leaderboard` 
 - `npm install`
 - `npm start` 
   
