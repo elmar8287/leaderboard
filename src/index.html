@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leaderboard</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
-<body>
-  
-  <div class="flex-wrapper">
-    <h1>Today's To Do</h1>
-    <div class="add-todo-wrapper">
-      <div class="input-wrapper">
-        <input type="text" id="description-task" placeholder="Add to your list">
-      </div>
-      <div class="button-wrapper">
-        <button id="add-task-btn" type="button">Add</button>
-      </div>
-    </div>
-    
-    <ul class="todos-wrapper">
-      
-    </ul>
 
-    <button type="button" id="clear">Clear all completed</button>
-    
-  </div>
-  
-  <script src="./index.js"></script>
-</body>
+<body>
+  <header>
+    <h1>Leaderboard</h1>
+  </header>
+
+  <section class="mainSection">
+    <div class="leftColumn">
+      <div id="leftColumn">
+        <h2>Recent scores</h2>
+        <button type="button">Refresh</button>
+      </div>
+      
+      <ul id="list" class="scoreList"></ul>
+    </div>
+
+    <div class="rightColumn">
+      <div id="rightColumn">
+        <h2>Add your score</h2>
+      </div>
+      
+      <input type="text" id="name" placeholder="Name" /><br><br>
+      <input type="text" id="score" placeholder="Score" /><br><br>
+      <button type="button" class="buttonClass">Submit</button>
+    </div>
+
+  </section>
+
+
+    <div class="container">
+      
+
+      
+    </div>
+    <script src="./index.js"></script>
+  </body>
 </html>
