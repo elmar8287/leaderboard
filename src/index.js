@@ -4,6 +4,7 @@ import * as add from './addLeader';
 
 /* eslint-disable max-classes-per-file */
 
+const list = document.getElementById('list');
 const addButton = document.querySelector('.buttonClass');
 
 addButton.addEventListener('click', () => {
