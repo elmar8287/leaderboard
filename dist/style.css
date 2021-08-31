@@ -1,0 +1,77 @@
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+  margin: 50px;
+}
+
+button {
+  border: solid rgb(207, 207, 207);
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(207, 207, 207);
+  font-size: 15px;
+  font-weight: 520;
+  cursor: pointer;
+  color: rgb(99, 99, 99);
+  box-shadow: 0 0 5px rgb(165, 165, 165);
+}
+
+input {
+  border-radius: 5px;
+  border: solid rgb(218, 218, 218);
+  border-width: 3px;
+  padding: 5px;
+  width: 380px;
+}
+
+form {
+  text-align: right;
+}
+
+.mainSection {
+  display: flex;
+  margin-left: 150px;
+}
+
+.rightColumn {
+  /* box-shadow: 0 0 20px gray;
+  border: solid rgb(202, 202, 202);
+  border-radius: 5px; */
+  margin: 20px;
+  padding: 10px;
+  width: 400px;
+  text-align: right;
+}
+
+#rightColumn {
+  text-align: center;
+}
+
+.leftColumn {
+  /* box-shadow: 0 0 20px gray;
+  border: solid rgb(202, 202, 202);
+  border-radius: 5px; */
+  margin: 20px;
+  padding: 10px;
+  width: 400px;
+}
+
+#leftColumn {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  padding: 10px;
+}
+
+.scoreList {
+  border: solid rgb(206, 206, 206);
+  list-style: none;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 0 10px gray;
+  border-radius: 5px;
+}
