@@ -1,4 +1,4 @@
-import './style.css';
+// import './style.css';
 import * as add from './addLeader.js';
 
 /* eslint-disable max-classes-per-file */
@@ -8,9 +8,9 @@ const addButton = document.querySelector('.buttonClass');
 
 addButton.addEventListener('click', () => {
   const newLeader = add.UseLeader.createLeader();
-  UseLeader.saveLeader(newLeader);
-  UseLeader.displayLeaders();
-  const Leaders = UseLeader.findLeaders();
+  add.UseLeader.saveLeader(newLeader);
+  add.UseLeader.displayLeaders();
+  const Leaders = add.UseLeader.findLeaders();
   if (Leaders.length === 0) {
     const aLeader = UseLeader.createLeader();
     const Leader = document.createElement('li');
@@ -24,5 +24,5 @@ addButton.addEventListener('click', () => {
 });
 
 window.onload = () => {
-  UseLeader.displayLeaders();
+  add.UseLeader.displayLeaders();
 };
