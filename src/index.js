@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 import * as add from './addLeader';
 
 /* eslint-disable max-classes-per-file */

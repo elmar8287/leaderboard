@@ -4,15 +4,15 @@
 
 Tasks to do:
 
-Project 1: basic page structure.
-Project 2: send and receive data from API.
-Project 3: final touches.
+- Project 1: basic page structure.
+- Project 2: send and receive data from API.
+- Project 3: final touches.
 
 ## Live demo
 
 You can visit live version via [link](https://elmar8287.github.io/leaderboard/)
 
-![Screen Shot](./src/scrn-sht.PNG)
+![Screen Shot](./src/screen-shot.PNG)
 
 ## Built With
 
