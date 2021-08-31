@@ -12,7 +12,7 @@ Tasks to do:
 
 You can visit live version via [link](https://elmar8287.github.io/leaderboard/)
 
-![Screen Shot](./src/scrn-sht.PNG)
+![Screen Shot](./src/screen-shot.PNG)
 
 ## Built With
 
