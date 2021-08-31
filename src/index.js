@@ -1,9 +1,9 @@
-// import './style.css';
-import * as add from './addLeader.js';
+/* eslint-disable import/prefer-default-export */
+
+import * as add from './addLeader';
 
 /* eslint-disable max-classes-per-file */
 
-const list = document.getElementById('list');
 const addButton = document.querySelector('.buttonClass');
 
 addButton.addEventListener('click', () => {
@@ -12,14 +12,14 @@ addButton.addEventListener('click', () => {
   add.UseLeader.displayLeaders();
   const Leaders = add.UseLeader.findLeaders();
   if (Leaders.length === 0) {
-    const aLeader = UseLeader.createLeader();
+    const aLeader = add.UseLeader.createLeader();
     const Leader = document.createElement('li');
     Leader.innerHTML = `<p>${aLeader.name}</p>
         <p>${aLeader.score} </p>`;
     const br = document.createElement('br');
     list.appendChild(Leader);
     list.appendChild(br);
-    UseLeader.saveLeader(aLeader);
+    add.UseLeader.saveLeader(aLeader);
   }
 });
 

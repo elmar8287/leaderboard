@@ -1,5 +1,8 @@
-import * as leader from './singleLeader.js';
+/* eslint-disable import/prefer-default-export */
 
+import * as leader from './singleLeader';
+
+const list = document.getElementById('list');
 const leaderName = document.getElementById('name');
 const leaderScore = document.getElementById('score');
 
@@ -30,7 +33,7 @@ export class UseLeader {
       Leader.innerHTML = `<p>${aLeader.name}: ${aLeader.score}</p>`;
       const br = document.createElement('br');
       list.appendChild(Leader);
-      list.appendChild(br);      
+      list.appendChild(br);
     });
   }
 }
