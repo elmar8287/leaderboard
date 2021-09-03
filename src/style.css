@@ -3,7 +3,8 @@ body {
 }
 
 header {
-  margin: 50px;
+  background-color: rgb(206, 206, 206);
+  padding: 10px;
 }
 
 button {
@@ -74,4 +75,11 @@ form {
   margin: 10px;
   box-shadow: 0 0 10px gray;
   border-radius: 5px;
+}
+
+footer {
+  background-color: rgb(206, 206, 206);
+  height: 60px;
+  text-align: center;
+  padding: 10px;
 }
