@@ -1,4 +1,3 @@
-const baseURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 const gameURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/8CJbUotFazwQ3FpCyxsp/scores';
 
 const scoreListDisplay = (scores) => scores.map((score) => `<li class="list-group-item d-flex justify-content-between align-items-start">${score.user}:${score.score}</li>`).join('');
