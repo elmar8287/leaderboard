@@ -14,3 +14,22 @@ const createGame = async (gameName) => {
   const gameId = await response.json();
   return gameId;
 };
+
+const addScore = async (user_1, gameId) => {
+  const response = await fetch(`${baseURL}games/${gameId}/scores/`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(user_1),
+  });
+
+  const result = await response.json();
+  return result;
+};
+
+const getScore = async (gameId) => {
+  const response = await fetch(`${baseURL}games/${gameId}/scores/`);
+  const result = await response.json();
+  return result;
+};
