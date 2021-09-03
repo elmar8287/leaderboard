@@ -3,7 +3,6 @@ import * as leader from './singleLeader';
 const list = document.getElementById('list');
 const leaderName = document.getElementById('name');
 const leaderScore = document.getElementById('score');
-
 export class UseLeader {
   static createLeader() {
     return new leader.Leader(leaderName.value, leaderScore.value);

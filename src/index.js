@@ -1,27 +1,14 @@
-import * as add from './addLeader';
+const baseURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 
-/* eslint-disable max-classes-per-file */
+const createGame = async (gameName) => {
+  const response = await fetch(`${baseURL}games/`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(gameName),
+  });
 
-const list = document.getElementById('list');
-const addButton = document.querySelector('.buttonClass');
-
-addButton.addEventListener('click', () => {
-  const newLeader = add.UseLeader.createLeader();
-  add.UseLeader.saveLeader(newLeader);
-  add.UseLeader.displayLeaders();
-  const Leaders = add.UseLeader.findLeaders();
-  if (Leaders.length === 0) {
-    const aLeader = add.UseLeader.createLeader();
-    const Leader = document.createElement('li');
-    Leader.innerHTML = `<p>${aLeader.name}</p>
-        <p>${aLeader.score} </p>`;
-    const br = document.createElement('br');
-    list.appendChild(Leader);
-    list.appendChild(br);
-    add.UseLeader.saveLeader(aLeader);
-  }
-});
-
-window.onload = () => {
-  add.UseLeader.displayLeaders();
+  const gameId = await response.json();
+  return gameId;
 };
