@@ -27,3 +27,31 @@ const addScore = async (user_1, gameId) => {
   const result = await response.json();
   return result;
 };
+
+const getScore = async (gameId) => {
+  const response = await fetch(`${baseURL}games/${gameId}/scores/`);
+  const result = await response.json();
+  return result;
+};
+
+const form = document.querySelector('#form');
+const scoreList = document.querySelector('#scoreList');
+const refreshButton = document.querySelector('#refreshBtn');
+
+window.addEventListener('DOMContentLoaded', async () => {
+  const game = { name: 'New game' };
+  const { result } = await createGame(game);
+  const gameId = result.split(' ')[3];
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const [user, score] = form.children;
+    const user_1 = { user: user.value, score: score.value };
+    await addScore(user_1, gameId);
+  });
+
+  refreshButton.addEventListener('click', async () => {
+    const result = await getScore(gameId);
+    scoreList.innerHTML = scoreListDisplay(result.result);
+  });
+});
