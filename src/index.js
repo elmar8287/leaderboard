@@ -1,6 +1,6 @@
 const baseURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 
-const scoreListDisplay = (scores) => scores.map((score) => `<li class="list-group-item list-group-item-action">${score.user}:${score.score}</li>`).join('');
+const scoreListDisplay = (scores) => scores.map((score) => `<li class="list-group-item d-flex justify-content-between align-items-start">${score.user}:${score.score}</li>`).join('');
 
 const createGame = async (gameName) => {
   const response = await fetch(`${baseURL}games/`, {
@@ -15,13 +15,13 @@ const createGame = async (gameName) => {
   return gameId;
 };
 
-const addScore = async (user_1, gameId) => {
+const addScore = async (userName, gameId) => {
   const response = await fetch(`${baseURL}games/${gameId}/scores/`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(user_1),
+    body: JSON.stringify(userName),
   });
 
   const result = await response.json();
@@ -43,12 +43,12 @@ const score = document.querySelector('#score');
 window.addEventListener('DOMContentLoaded', async () => {
   const game = { name: 'My cool new game' };
   const { result } = await createGame(game);
-  const gameId = result.split(' ')[0];
+  const gameId = result.split(' ')[2];
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const user_1 = { user: user.value, score: score.value };
-    await addScore(user_1, gameId);
+    const userName = { user: user.value, score: score.value };
+    await addScore(userName, gameId);
   });
 
   refreshButton.addEventListener('click', async () => {
