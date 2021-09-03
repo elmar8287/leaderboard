@@ -37,16 +37,21 @@ const getScore = async (gameId) => {
 const form = document.querySelector('#form');
 const scoreList = document.querySelector('#scoreList');
 const refreshButton = document.querySelector('#refreshBtn');
+const user = document.querySelector('#name');
+const score = document.querySelector('#score');
+
 
 window.addEventListener('DOMContentLoaded', async () => {
-  const game = { name: 'New game' };
+  const game = { name: 'My cool new game' };
   const { result } = await createGame(game);
-  const gameId = result.split(' ')[3];
+  const gameId = result.split(' ')[0];
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const [user, score] = form.children;
+    // const [user, score] = form.children;
+    // console.log(score);
     const user_1 = { user: user.value, score: score.value };
+    console.log(user_1);
     await addScore(user_1, gameId);
   });
 
