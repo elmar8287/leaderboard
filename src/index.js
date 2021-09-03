@@ -3,19 +3,6 @@ const gameURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/
 
 const scoreListDisplay = (scores) => scores.map((score) => `<li class="list-group-item d-flex justify-content-between align-items-start">${score.user}:${score.score}</li>`).join('');
 
-const createGame = async (gameName) => {
-  const response = await fetch(`${baseURL}games/`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(gameName),
-  });
-
-  const gameId = await response.json();
-  return gameId;
-};
-
 const addScore = async (userName, gameURL) => {
   const response = await fetch(gameURL, {
     method: 'POST',
