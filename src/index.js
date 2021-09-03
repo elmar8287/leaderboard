@@ -33,3 +33,9 @@ const getScore = async (gameId) => {
   const result = await response.json();
   return result;
 };
+
+const form = document.querySelector('#form');
+const scoreList = document.querySelector('#scoreList');
+const refreshButton = document.querySelector('#refreshBtn');
+const user = document.querySelector('#name');
+const score = document.querySelector('#score');
