@@ -1,1 +1,45 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Leaderboard</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/><script defer="defer" src="/todo-list/index.bundle.js"></script></head><body><header><h1>Leaderboard</h1></header><main class="mainSection"><section class="leftColumn"><div id="leftColumn"><h2>Recent scores</h2><button class="btn" id="refreshBtn" type="button">Refresh</button></div><ul class="scoreList" id="scoreList"></ul></section><section class="rightColumn"><div id="rightColumn"><h2>Add your score</h2></div><form action="#" id="form" class="form"><input id="name" placeholder="Your name"><br><br><input type="number" id="score" placeholder="Your score"><br><br><button type="submit" id="submitBtn" class="btn">Submit</button></form></section></main><footer><p>Copyright © 2021 Elmar Abdulkarimov</p></footer><script type="module" src="./index.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="./style.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+</head>
+
+<body>
+  <header>
+    <h1>Leaderboard</h1>
+  </header>
+  <main class="mainSection">
+    <section class="leftColumn">
+      <div id="leftColumn">
+        <h2>Recent scores</h2>
+        <button class="btn" id="refreshBtn" type="button">Refresh</button>
+      </div>
+      <ul class="scoreList" id="scoreList"></ul>
+    </section>
+      <section class="rightColumn">
+      <div id="rightColumn">
+        <h2>Add your score</h2>
+      </div>
+      
+      <form action="#" id="form" class="form">
+        <input type="text" id="name" placeholder="Your name"><br><br>
+        <input type="number" id="score" placeholder="Your score"><br><br>
+        <button type="submit" id="submitBtn" class="btn">Submit</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>Copyright © 2021 Elmar Abdulkarimov </p>
+  </footer>
+  <script type='module' src="./index.js"></script>
+</body>
+
+</html>
