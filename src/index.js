@@ -1,6 +1,5 @@
 const baseURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 const gameURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/8CJbUotFazwQ3FpCyxsp/scores';
-let scoreResult = [];
 
 const scoreListDisplay = (scores) => scores.map((score) => `<li class="list-group-item d-flex justify-content-between align-items-start">${score.user}:${score.score}</li>`).join('');
 
@@ -34,7 +33,6 @@ const getScore = async (gameURL) => {
   const response = await fetch(gameURL);
   const result = await response.json();
   return result;
-
 };
 
 const form = document.querySelector('#form');
@@ -57,9 +55,6 @@ refreshButton.addEventListener('click', async () => {
 });
 
 window.addEventListener('DOMContentLoaded', async () => {
-  const game = { name: 'My cool new game' };
-  const { result } = await createGame(game);
-
   const refreshResult = await getScore(gameURL);
   scoreList.innerHTML = scoreListDisplay(refreshResult.result);
 });
