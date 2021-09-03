@@ -5,7 +5,7 @@
 Tasks to do:
 
 - Project 1: basic page structure.
-- Project 2: send and receive data from API.
+- Project 2: send and receive data from API. 📌(current)
 - Project 3: final touches.
 
 ## Live demo
@@ -21,6 +21,7 @@ You can visit live version via [link](https://elmar8287.github.io/leaderboard/)
 - JS
 - webpack
 - JSON
+- used API
 
 ### Setup
 To run code locally, open your terminal and follow these steps:
