@@ -28,8 +28,17 @@ input {
   width: 380px;
 }
 
+#submitBtn {
+  margin-top: 10px;
+}
+
+input:first-child {
+  margin-bottom: 10px;
+}
+
 form {
   text-align: right;
+  display: block;
 }
 
 .mainSection {
@@ -78,8 +87,11 @@ form {
 }
 
 footer {
-  background-color: rgb(206, 206, 206);
-  height: 60px;
-  text-align: center;
+  background-color: #c9c9c9;
   padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
