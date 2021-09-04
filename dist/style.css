@@ -95,3 +95,9 @@ footer {
   left: 0;
   width: 100%;
 }
+
+/* Desktop version */
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+}
