@@ -49,7 +49,8 @@ form {
 }
 
 .rightColumn {
-  margin: 5px;
+  margin-left: 5px;
+  margin-bottom: 80px;
   padding: 5px;
   width: 100%;
   text-align: right;
@@ -61,7 +62,7 @@ form {
 }
 
 .leftColumn {
-  margin: 5px;
+  margin-left: 5px;
   padding: 5px;
   width: 100%;
 }
@@ -90,7 +91,6 @@ form {
 
 footer {
   background-color: #c9c9c9;
-  padding: 10px;
   text-align: center;
   position: fixed;
   bottom: 0;
@@ -191,7 +191,6 @@ footer {
   
   footer {
     background-color: #c9c9c9;
-    padding: 10px;
     text-align: center;
     position: fixed;
     bottom: 0;
@@ -292,7 +291,6 @@ footer {
   
   footer {
     background-color: #c9c9c9;
-    padding: 10px;
     text-align: center;
     position: fixed;
     bottom: 0;
