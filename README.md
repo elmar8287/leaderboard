@@ -5,7 +5,7 @@
 Tasks to do:
 
 - Project 1: basic page structure.
-- Project 2: send and receive data from API. 📌(current)
+- Project 2: send and receive data from API.
 - Project 3: final touches.
 
 ## Live demo
